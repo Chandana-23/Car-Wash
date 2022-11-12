@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="container d-block text-center">
+    <h1>Dash Board</h1>
+    <h2>Book a service here!</h2>
+    <form class="form" action="book" method="post">
+        {% csrf_token %}
+        <label class="form-label" for="Service">Service</label>
+        <select class="form-control" name="service" id="service" required>
+            <option value="Full Body Wash">Full Body Wash</option>
+            <option value="Water Wash">Water Wash</option>
+            <option value="Gas Tank Wash">Gas Tank Wash</option>
+        </select>
+        <input type="hidden" name="username" id="username" value="{{ username }}">
+        <label class="form-label" for="Place">Place</label>
+        <select class="form-control" name="place" id="place" required>
+            <option value="Ameerpet">Ameerpet</option>
+            <option value="Gachibowli">Gachibowli</option>
+            <option value="Kokapet">Kokapet</option>
+        </select>
+        
+        <p>You are left with 5 chances!</p>
+        <input class="form-control btn btn-success" type="submit" value="Book">
+    </form>
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="container d-block text-center">
+    <h1>List of Bookings</h1>
+    <h3>{{user.username}} Data</h3>
+    <table class="table">
+    {% for b in book %}
+        <tr>
+            <td>Service Name</td>
+            <td>{{b.service}}</td>
+        </tr>
+        <tr>
+            <td>Place</td>
+            <td>{{b.place}}</td>
+        </tr>
+        <tr>
+            <td>Approval</td>
+            <td>{{b.approval}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+
+
+
+
+{% endblock %}
